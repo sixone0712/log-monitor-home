@@ -31,7 +31,7 @@ export default function RemoteJobStepsDrawer({ form }: RemoteJobStepsDrawerProps
       css={style}
       extra={
         <Space>
-          <Button onClick={() => console.log(form.getFieldsValue())}>Show Form</Button>
+          {/* <Button onClick={() => console.log(form.getFieldsValue())}>Show Form</Button> */}
           <Button onClick={() => {}}>Cancel</Button>
           <Button onClick={onSubmit} type="primary">
             Ok

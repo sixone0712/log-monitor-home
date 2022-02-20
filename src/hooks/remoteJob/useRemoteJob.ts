@@ -198,15 +198,15 @@ export function useRemoteJob({ type }: { type: RemoteJobType }) {
 }
 
 const plansValidation = (jobInfo: RemoteJobDetailReduxState) => {
-  if (!hasValue(jobInfo.jobName)) {
-    return REMOTE_JOB_VALIDATION_ERROR.PLAN_NO_JOB_NAME;
-  }
-  if (!hasValue(jobInfo.siteId)) {
-    return REMOTE_JOB_VALIDATION_ERROR.PLAN_NO_USER_FAB_NAME;
-  }
-  if (!hasArrayWithData(jobInfo.planIds)) {
-    return REMOTE_JOB_VALIDATION_ERROR.PLAN_NO_PLANS;
-  }
+  // if (!hasValue(jobInfo.jobName)) {
+  //   return REMOTE_JOB_VALIDATION_ERROR.PLAN_NO_JOB_NAME;
+  // }
+  // if (!hasValue(jobInfo.siteId)) {
+  //   return REMOTE_JOB_VALIDATION_ERROR.PLAN_NO_USER_FAB_NAME;
+  // }
+  // if (!hasArrayWithData(jobInfo.planIds)) {
+  //   return REMOTE_JOB_VALIDATION_ERROR.PLAN_NO_PLANS;
+  // }
 
   return REMOTE_JOB_VALIDATION_ERROR.NO_ERROR;
 };

@@ -30,22 +30,31 @@ export default function RemoteJobStepsDrawerScript({ form }: RemoteJobStepsDrawe
     <div css={style}>
       <Form.Item label={<StepCommonLabel label="Script" />} colon={false}>
         <Space>
-          <Form.Item name="scriptType" className="scriptType">
+          <Form.Item name="scriptType" className="script-type">
             <Select onChange={setScriptType}>
               <Select.Option value="python">Python</Select.Option>
               <Select.Option value="shell">Shell</Select.Option>
             </Select>
           </Form.Item>
-          <Form.Item>
+          <Form.Item className="script-btns">
             <Space>
               <Button onClick={() => setIsScript(true)}>Edit</Button>
               <Button onClick={() => onImport()}>Import</Button>
               <Button onClick={() => onExport()}>Export</Button>
             </Space>
           </Form.Item>
-          {/* just for setting form value */}
-          <Form.Item name="script" />
         </Space>
+        {/* just for setting form value */}
+        <Form.Item
+          noStyle
+          name="script"
+          rules={[
+            {
+              required: true,
+              message: 'Please input a script content!',
+            },
+          ]}
+        />
       </Form.Item>
       <RemoteJobStepsModalScript
         title="Pyhton Code"
@@ -65,9 +74,14 @@ export default function RemoteJobStepsDrawerScript({ form }: RemoteJobStepsDrawe
 }
 
 const style = css`
-  .scriptType {
+  .script-type {
     .ant-select {
       width: 6.25rem;
     }
+  }
+
+  .script-type,
+  .script-btns {
+    margin-bottom: 0.5rem;
   }
 `;
